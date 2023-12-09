@@ -1,0 +1,40 @@
+{
+  "name": "display",
+  "version": "1.0.0",
+  "description": "Information display",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "npx tsc",
+      "start": "node dist/index.js",
+      "dev": "concurrently \"npx tsc --watch\" \"nodemon -q dist/index.js\"",
+      "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ecg-media/display.git"
+  },
+  "keywords": [
+    "info",
+    "temperatur",
+    "display",
+    "text",
+    "clock"
+  ],
+  "author": "E.C:G Bremen",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/ecg-media/display/issues"
+  },
+  "homepage": "https://github.com/ecg-media/display#readme",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.10.4",
+    "concurrently": "^8.2.2",
+    "nodemon": "^3.0.2",
+    "typescript": "^5.3.3"
+  }
+}
