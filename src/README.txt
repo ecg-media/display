@@ -1,0 +1,1 @@
+HERE the backend implementation. in index.ts the endpoints are defined. DB services, models etc. can be seperated in different folders or just in different files

@@ -1,0 +1,1 @@
+Here will be the components for temperature etc. will be implemented
