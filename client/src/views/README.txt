@@ -1,1 +1,0 @@
-/conig and /display/<0..n> pages will be here
