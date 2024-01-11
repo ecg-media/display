@@ -15,6 +15,9 @@ class MainViewModel extends ChangeNotifier {
   /// Index of the currently selected route.
   int _selectedIndex = 0;
 
+  /// Routerservice
+  final RouterService _routerService = RouterService.getInstance();
+
   /// Initializes the view model.
   Future<bool> init(BuildContext context) async {
     _context = context;
@@ -36,24 +39,7 @@ class MainViewModel extends ChangeNotifier {
     return _selectedIndex;
   }
 
-  /// Loads the selected page of the navigation.
-  void loadPage() {
-    // Get the nested navigator state to change the nested route.
-    NavigatorState? state;
-    _context.visitChildElements((element) {
-      element.visitChildElements((element) {
-        element.visitChildElements((element) {
-          element.visitChildElements((element) {
-            if (element.widget is Navigator) {
-              state = (element as StatefulElement).state as NavigatorState;
-            }
-          });
-        });
-      });
-    });
-
-    var routeService = RouterService.getInstance();
-    var route = routeService.nestedRoutes.keys.elementAt(_selectedIndex);
-    state?.pushReplacementNamed(route);
+  Widget getBody() {
+    return _routerService.nestedRoutes[selectedIndex];
   }
 }

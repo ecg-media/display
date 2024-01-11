@@ -1,8 +1,9 @@
-import 'package:display/viewmodels/config/config.dart';
-import 'package:display/viewmodels/config/settings.dart';
+import 'package:display/viewmodels/display.dart';
 import 'package:display/viewmodels/main.dart';
 import 'package:display/views/config/config.dart';
 import 'package:display/views/config/settings.dart';
+import 'package:display/views/config/text_list.dart';
+import 'package:display/views/display.dart';
 import 'package:display/views/main.dart';
 import 'package:flutter/material.dart';
 
@@ -26,6 +27,7 @@ class RouterService {
   Map<String, Widget Function(BuildContext)> get routes {
     return {
       MainViewModel.route: (context) => const MainScreen(),
+      DisplayViewModel.route: (context) => const DisplayScreen(),
     };
   }
 
@@ -35,16 +37,9 @@ class RouterService {
   }
 
   /// Routes of the nested navigator.
-  Map<String, Route<dynamic>?> get nestedRoutes {
-    return {
-       ConfigViewModel.route: PageRouteBuilder(
-        pageBuilder: (context, animation1, animation2) => const ConfigScreen(),
-        transitionDuration: const Duration(seconds: 0),
-      ),
-       SettingsViewModel.route: PageRouteBuilder(
-        pageBuilder: (context, animation1, animation2) => const SettingsScreen(),
-        transitionDuration: const Duration(seconds: 0),
-      ),
-    };
-  }
+  List<Widget> get nestedRoutes => [
+        const TextListScreen(),
+        const ConfigScreen(),
+        const SettingsScreen(),
+      ];
 }

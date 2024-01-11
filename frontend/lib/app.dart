@@ -8,7 +8,7 @@ import 'package:display/lib_color_schemes.g.dart';
 
 class App extends StatelessWidget {
   /// Initializes the instance.
-  const App({Key? key}) : super(key: key);
+  const App({super.key});
 
   /// Creates the app with the necessary configurations.
   @override
