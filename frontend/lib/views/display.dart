@@ -1,3 +1,5 @@
+import 'package:display/components/date.dart';
+import 'package:display/components/time.dart';
 import 'package:flutter/material.dart';
 
 /// Overview screen of the display configuration
@@ -11,7 +13,12 @@ class DisplayScreen extends StatelessWidget {
     return const Scaffold(
       backgroundColor: Colors.black,
       body: Center(
-        child: Text("HERE WILL BE THE DISPLAY Preview"),
+        child: TimeComponent(
+          textSize: 48,
+          textColor: Colors.red,
+          showSeconds: true,
+          isAnalog: true,
+        ),
       ),
     );
   }
